@@ -10,34 +10,7 @@ import {
   
   @Entity('usuarios', { schema: 'core' })
   export class UsuarioEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
-  
-  
-    /*Campo Nombre de los usuarios*/
-    @Column({
-        name: 'nombre_usuario',
-        type: 'varchar',
-        comment: 'Nombre de los usuarios',
-      })
-      nombreUsuario: string;
-
-      /*Campo Apellido de los usuarios*/
-    @Column({
-        name: 'apellido_usuario',
-        type: 'varchar',
-        comment: 'Apellido de los usuarios',
-      })
-      apellidoUsuario: string;
-      
-      /*Campo de tipo de usuario*/
-    @Column({
-        name: 'tipo_usuario',
-        type: 'varchar',
-        comment: 'Apellido de los usuarios',
-      })
-      tipoUsuario: string;
-
+    /* Metodos */
     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
@@ -61,6 +34,34 @@ import {
         comment: 'Fecha en la que se elimina el candidato',
       })
       deleteAt: Date;
+    /*Fin de Metodos */
+
+    /*Declaracion de campos de la tabla*/
+    @PrimaryGeneratedColumn('uuid') 
+    id: string;
   
-  }
   
+    /*Campo Nombre de los usuarios*/
+    @Column({
+        name: 'nombre_usuario',
+        type: 'varchar',
+        comment: 'Nombre de los usuarios',
+      })
+      nombreUsuario: string;
+
+      /*Campo Apellido de los usuarios*/
+    @Column({
+        name: 'apellido_usuario',
+        type: 'varchar',
+        comment: 'Apellido de los usuarios',
+      })
+      apellidoUsuario: string;
+      
+      /*Campo de tipo de usuario*/
+    @Column({
+        name: 'cargo',
+        type: 'varchar',
+        comment: 'Cargo de los usuarios',
+      })
+      cargoUsuario: string;
+}

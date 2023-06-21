@@ -10,43 +10,7 @@ import {
   
   @Entity('cronogramas', { schema: 'core' })
   export class CronogramaEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
-  
-  
-    /*Campo Nombre del Cronograma*/
-    @Column({
-        name: 'nombre_cronograma',
-        type: 'varchar',
-        comment: 'Nombre del Cronograma',
-      })
-      nombreCronograma: string;
-
-
-      /*Campo Nombre del Cronograma*/
-    @Column({
-        name: 'encargado_cronograma',
-        type: 'varchar',
-        comment: 'Nombre del Canditado a postularse',
-      })
-      encargadoCronograma: string;
-
-      /*Campo fechaIni*/
-    @Column({
-        name: 'fechaIni_cronograma',
-        type: 'date',
-        comment: 'Nombre del Canditado a postularse',
-      })
-      fechaIniCronograma: string;
-
-      /*Campo fechaFin*/
-    @Column({
-        name: 'fechaFin_cronograma',
-        type: 'date',
-        comment: 'Fecha de finalizacion del cronograma',
-      })
-      fechaFinCronograma: string;
-      
+    /* Metodos */
     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
@@ -70,6 +34,53 @@ import {
         comment: 'Fecha en la que se elimina el candidato',
       })
       deleteAt: Date;
+    /* Fin Metodos */
+
+    /* Definicion de campos de la tabla */
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
   
+  
+    /*Campo Nombre del Cronograma*/
+    @Column({
+        name: 'nombre',
+        type: 'varchar',
+        comment: 'Nombre del Cronograma',
+      })
+      nombreCronograma: string;
+
+
+      /*Campo Nombre del Cronograma*/
+    @Column({
+        name: 'encargado',
+        type: 'varchar',
+        comment: 'Nombre del Encargado de realizar las tareas',
+      })
+      encargadoCronograma: string;
+
+      /*Campo FechaInicio*/
+    @Column({
+        name: 'fecha_inicio',
+        type: 'date',
+        comment: 'Nombre del Canditado a postularse',
+      })
+      fechaInicio: string;
+
+      /*Campo Fecha de Finalización*/
+    @Column({
+        name: 'fecha_finalizacion',
+        type: 'date',
+        comment: 'Fecha de finalizacion del cronograma',
+      })
+      fechaFinalizacion: string;
+
+      /*Campo Periodo Lectivo*/
+      @Column({
+        name: 'periodo_lectivo',
+        type: 'date',
+        comment: 'Periodo Lectivo al que pertenece el cronograma',
+      })
+      periodoLectivo: string;
+      
   }
   

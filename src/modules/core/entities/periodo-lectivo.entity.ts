@@ -10,19 +10,8 @@ import {
   
   @Entity('periodos_lectivos', { schema: 'core' })
   export class PeriodoLectivoEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
-  
-  
-    /*Campo Nombre del periodo lectivo*/
-    @Column({
-        name: 'nombre_periodo',
-        type: 'varchar',
-        comment: 'Nombre del periodo lectivo',
-      })
-      nombrePeriodo: string;
-
-    @CreateDateColumn({
+     /*Metodos*/
+     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
       default: () => 'CURRENT_TIMESTAMP',
@@ -45,6 +34,18 @@ import {
         comment: 'Fecha en la que se elimina el candidato',
       })
       deleteAt: Date;
+    /*Fin de Metodos*/
+
+    /*Declaracion de los campos de la tabla*/
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
   
+    /*Campo Nombre del periodo lectivo*/
+    @Column({
+        name: 'nombre_periodo',
+        type: 'varchar',
+        comment: 'Nombre del periodo lectivo',
+      })
+      nombrePeriodo: string;
   }
   

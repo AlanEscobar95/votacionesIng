@@ -6,11 +6,12 @@ import {
   PaginationDto,
   UpdateCatalogueDto,
 } from '@core/dto';
-import { CatalogueEntity } from '@core/entities';
 import { CatalogueTypeEnum, RepositoryEnum } from '@shared/enums';
 import { ReadUserDto } from '@auth/dto';
 import { UserEntity } from '@auth/entities';
 import { plainToInstance } from 'class-transformer';
+import { CatalogueEntity } from '../entities/catalogue.entity';
+
 
 @Injectable()
 export class CataloguesService {

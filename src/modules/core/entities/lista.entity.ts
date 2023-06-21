@@ -10,42 +10,7 @@ import {
   
   @Entity('listas', { schema: 'core' })
   export class ListaEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
-  
-  
-    /*Campo Nombre de la lista*/
-    @Column({
-        name: 'nombre_lista',
-        type: 'varchar',
-        comment: 'Nombre de la lista',
-      })
-      nombreLista: string;
-    
-      /*Campo Tipo de Lista*/
-      @Column({
-        name: 'tipo_lista',
-        type: 'varchar',
-        comment: 'Tipo del Lista',
-      })
-      TipoLista: string;
-
-      /*Campo de la imagen de la Lista*/
-    @Column({
-        name: 'imagen',
-        type: 'character varying',
-        comment: 'Imagen de la lista',
-      })
-      imagen: string;
-
-      /*Campo Color de la Lista*/
-      @Column({
-        name: 'color',
-        type: 'varchar',
-        comment: 'Color de la Lista',
-      })
-      color: string;
-      
+    /* Metodos */
     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
@@ -69,6 +34,52 @@ import {
         comment: 'Fecha en la que se elimina el candidato',
       })
       deleteAt: Date;
+    /* Fin Metodos */
+
+    /* Declaracion de campos de la tabla */
+    @PrimaryGeneratedColumn('uuid') 
+    id: string;
+  
+  
+    /*Campo Nombre de la lista*/
+    @Column({
+        name: 'nombre_lista',
+        type: 'varchar',
+        comment: 'Nombre de la lista',
+      })
+      nombreLista: string;
+    
+      /*Campo Tipo de Lista*/
+      @Column({
+        name: 'tipo_lista',
+        type: 'varchar',
+        comment: 'Tipo del Lista',
+      })
+      tipoLista: string;
+
+      /*Campo de la imagen de la Lista*/
+    @Column({
+        name: 'imagen',
+        type: 'varchar',
+        comment: 'Imagen de la lista',
+      })
+      imagen: string;
+
+      /*Campo Color de la Lista*/
+      @Column({
+        name: 'color',
+        type: 'varchar',
+        comment: 'Color de la Lista Ej:Verde',
+      })
+      color: string;
+      
+      /*Campo Slogan de la Lista*/
+      @Column({
+        name: 'slogan',
+        type: 'varchar',
+        comment: 'Slogan de la Lista',
+      })
+      slogan: string;
   
   }
   

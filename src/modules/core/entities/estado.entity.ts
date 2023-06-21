@@ -10,19 +10,8 @@ import {
   
   @Entity('estados', { schema: 'core' })
   export class EstadoEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
-  
-  
-    /*Campo Nombre del Estado*/
-    @Column({
-        name: 'nombre_estado',
-        type: 'varchar',
-        comment: 'Nombre del Estado',
-      })
-      nombreEstado: string;
-
-    @CreateDateColumn({
+     /* Metodos */
+     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
       default: () => 'CURRENT_TIMESTAMP',
@@ -45,6 +34,19 @@ import {
         comment: 'Fecha en la que se elimina el candidato',
       })
       deleteAt: Date;
+    /* Fin Metodos */
+    
+    /* Definicion de campos de la tabla */
+    @PrimaryGeneratedColumn('uuid') 
+    id: string;
   
+  
+    /*Campo Nombre del Estado*/
+    @Column({
+        name: 'nombre_estado',
+        type: 'varchar',
+        comment: 'Nombre del Estado',
+      })
+      nombreEstado: string;
   }
   

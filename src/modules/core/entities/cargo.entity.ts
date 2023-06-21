@@ -10,18 +10,7 @@ import {
   
   @Entity('cargos', { schema: 'core' })
   export class CargoEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
-  
-  
-    /*Campo Nombre del Cargo*/
-    @Column({
-        name: 'nombre_cargo',
-        type: 'varchar',
-        comment: 'Nombre del Cargo',
-      })
-      nombreCargo: string;
-
+    /* Metodos */
     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
@@ -45,6 +34,17 @@ import {
         comment: 'Fecha en la que se elimina el candidato',
       })
       deleteAt: Date;
-  
+    /* Fin Metodos */
+
+    /* Declaracion de campos de la tabla */
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
+    /*Campo Nombre del Cargo*/
+    @Column({
+        name: 'nombre_cargo',
+        type: 'varchar',
+        comment: 'Nombre del Cargo',
+      })
+      nombreCargo: string;
   }
   

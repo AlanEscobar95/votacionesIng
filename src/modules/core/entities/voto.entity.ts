@@ -10,25 +10,7 @@ import {
   
   @Entity('votos', { schema: 'core' })
   export class VotoEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
- 
-    /*Campo Id de la tabla Listas*/
-    @Column({
-        name: 'lista_id',
-        type: 'varchar',
-        comment: 'Id de la tabla Listas',
-      })
-      listaId: string;
-
-      /*Campo Id de la tabla Candidatos*/
-    @Column({
-        name: 'canditado_id',
-        type: 'varchar',
-        comment: 'Id de la tabla Candidatos',
-      })
-      candidatoId: string;
-
+    /*Metodos*/
     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
@@ -53,4 +35,25 @@ import {
       })
       deleteAt: Date;
   
+    /*Fin de Metodos*/
+    
+    /*Declaracion de los campos de la tabla*/
+    @PrimaryGeneratedColumn('uuid') 
+    id: string;
+ 
+    /*Campo Id de la tabla Listas*/
+    @Column({
+        name: 'lista_id',
+        type: 'varchar',
+        comment: 'Id de la tabla Listas',
+      })
+      listaId: string;
+
+      /*Campo Id de la tabla Candidatos*/
+    @Column({
+        name: 'candidato_id',
+        type: 'varchar',
+        comment: 'Id de la tabla Candidatos',
+      })
+      candidatoId: string;
   }

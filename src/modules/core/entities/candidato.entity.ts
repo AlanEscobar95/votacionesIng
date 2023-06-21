@@ -10,9 +10,35 @@ import {
   
   @Entity('candidatos', { schema: 'core' })
   export class CandidatoEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
+    /* Metodos */
+    @CreateDateColumn({
+      name: 'created_at',
+      type: 'timestamptz',
+      default: () => 'CURRENT_TIMESTAMP',
+      comment: 'Fecha de creacion del candidato',
+      })
+      createdAt: Date;
+    
+    @UpdateDateColumn({
+      name: 'updated_at', // Nombre de la columna en la base de datos
+      type: 'timestamptz',
+      default: () => 'CURRENT_TIMESTAMP',
+      comment: 'Fecha de actualizacion del candidato',
+    })
+    updatedAt: Date;
+
+    @DeleteDateColumn({
+        name: 'deleted_at',
+        type: 'timestamptz',
+        default: () => 'CURRENT_TIMESTAMP',
+        comment: 'Fecha en la que se elimina el candidato',
+      })
+      deleteAt: Date;
+    /* Fin Metodos */
+    
+    /* Declaracion de campos de la tabla */
+    @PrimaryGeneratedColumn('uuid')
     id: string;
-  
   
     /*Campo Nombre del Canditado*/
     @Column({
@@ -43,33 +69,8 @@ import {
     @Column({
         name: 'carrera_id',
         type: 'int',
-        comment: 'Carrera en la que se encuantra el candidato dentro de la lista',
+        comment: 'Carrera que se encuentra cursando el candidato de lista',
       })
       carreraId: string;
-
-    @CreateDateColumn({
-      name: 'created_at',
-      type: 'timestamptz',
-      default: () => 'CURRENT_TIMESTAMP',
-      comment: 'Fecha de creacion del candidato',
-      })
-      createdAt: Date;
-    
-    @UpdateDateColumn({
-      name: 'updated_at', // Nombre de la columna en la base de datos
-      type: 'timestamptz',
-      default: () => 'CURRENT_TIMESTAMP',
-      comment: 'Fecha de actualizacion del candidato',
-    })
-    updatedAt: Date;
-
-    @DeleteDateColumn({
-        name: 'deleted_at',
-        type: 'timestamptz',
-        default: () => 'CURRENT_TIMESTAMP',
-        comment: 'Fecha en la que se elimina el candidato',
-      })
-      deleteAt: Date;
-  
   }
   

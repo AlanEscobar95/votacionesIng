@@ -10,18 +10,7 @@ import {
   
   @Entity('tipos_listas', { schema: 'core' })
   export class TipoListaEntity {
-    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
-    id: string;
-  
-  
-    /*Campo Nombre de los tipos de Listas*/
-    @Column({
-        name: 'nombre_tipo_lista',
-        type: 'varchar',
-        comment: 'Nombre de los tipos de Listas',
-      })
-      nombreTipoLista: string;
-
+    /* Metodos */
     @CreateDateColumn({
       name: 'created_at',
       type: 'timestamptz',
@@ -45,6 +34,20 @@ import {
         comment: 'Fecha en la que se elimina el candidato',
       })
       deleteAt: Date;
+
+    /*Fin Metodos */
+
+    /*Declaracion de campos de la tabla*/
+    @PrimaryGeneratedColumn() /*('uuid') Permite crear un id alfanúmerico*/ 
+    id: string;
   
+    /*Campo Nombre de los tipos de Listas*/
+    @Column({
+        name: 'nombre_tipo_lista',
+        type: 'varchar',
+        comment: 'Nombre de los tipos de Listas',
+      })
+      nombreTipoLista: string;
+
   }
   

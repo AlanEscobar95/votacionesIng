@@ -8,6 +8,19 @@ import {
   StudentsController,
   SubjectsController,
   InformationTeachersController,
+  //Nuestros Controladores
+  CandidatosController,
+  CargosController,
+  CarrerasController,
+  CronogramasController,
+  EstadosController,
+  ListasController,
+  PeriodosLectivosController,
+  RolesController,
+  TareasController,
+  TiposListasController,
+  UsuariosController,
+  VotosController
 } from '@core/controllers';
 import {
   CareersService,
@@ -18,6 +31,18 @@ import {
   StudentsService,
   SubjectsService,
   InformationTeachersService,
+  CandidatosService,
+  CargosService,
+  CarrerasService,
+  CronogramasService,
+  EstadosService,
+  ListasService,
+  PeriodosLectivosService,
+  RolesService,
+  TareasService,
+  TiposListasService,
+  UsuariosService,
+  VotosService,
 } from '@core/services';
 import { DatabaseModule } from '@database';
 import { coreProviders } from '@core/providers';
@@ -34,6 +59,20 @@ import { coreProviders } from '@core/providers';
     InstitutionsController,
     StudentsController,
     SubjectsController,
+
+    //Nuestros Controladores
+    CandidatosController,
+    CargosController,
+    CarrerasController,
+    CronogramasController,
+    EstadosController,
+    ListasController,
+    PeriodosLectivosController,
+    RolesController,
+    TareasController,
+    TiposListasController,
+    UsuariosController,
+    VotosController
   ],
   providers: [
     ...coreProviders,
@@ -45,6 +84,20 @@ import { coreProviders } from '@core/providers';
     InstitutionsService,
     StudentsService,
     SubjectsService,
+
+    //Nuestros Proveedores
+    CandidatosService,
+    CargosService,
+    CarrerasService,
+    CronogramasService,
+    EstadosService,
+    ListasService,
+    PeriodosLectivosService,
+    RolesService,
+    TareasService,
+    TiposListasService,
+    UsuariosService,
+    VotosService,
   ],
   exports: [
     ...coreProviders,
@@ -56,6 +109,20 @@ import { coreProviders } from '@core/providers';
     InstitutionsService,
     StudentsService,
     SubjectsService,
+
+    //Nuestros Exports
+    CandidatosService,
+    CargosService,
+    CarrerasService,
+    CronogramasService,
+    EstadosService,
+    ListasService,
+    PeriodosLectivosService,
+    RolesService,
+    TareasService,
+    TiposListasService,
+    UsuariosService,
+    VotosService,
   ],
 })
 export class CoreModule {}

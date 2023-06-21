@@ -19,7 +19,6 @@ import { ListaEntity } from '../entities/lista.entity';
 import { RolEntity } from '../entities/rol.entity';
 import { PeriodoLectivoEntity } from '../entities/periodo-lectivo.entity';
 import { TareaEntity } from '../entities/tarea.entity';
-import { TipoUsuarioEntity } from '../entities/tipo_usuario.entity';
 import { TipoListaEntity } from '../entities/tipo-lista.entity';
 import { UsuarioEntity } from '../entities/usuario.entity';
 import { VotoEntity } from '../entities/voto.entity';
@@ -127,12 +126,6 @@ export const coreProviders = [
     provide: RepositoryEnum.TAREA_REPOSITORY,
     useFactory: (dataSource: DataSource) =>
       dataSource.getRepository(TareaEntity),
-    inject: [DataSourceEnum.PG_DATA_SOURCE],
-  },
-  {
-    provide: RepositoryEnum.TIPO_USUARIO_REPOSITORY,
-    useFactory: (dataSource: DataSource) =>
-      dataSource.getRepository(TipoUsuarioEntity),
     inject: [DataSourceEnum.PG_DATA_SOURCE],
   },
   {
